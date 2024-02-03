@@ -6,12 +6,17 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct RegisterNewCatView: View {
     @State private var name: String = ""
     @State private var breed: String = ""
     @State private var age: String = ""
-    @State private var neighborhood: String = ""
+    
+    let startPosition = MapCameraPosition.region(MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 56, longitude: -3),
+        span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10)
+    ))
     
     var body: some View {
         VStack {
@@ -48,17 +53,16 @@ struct RegisterNewCatView: View {
                 .bold()
             }
             
-            // this will go to map selection
-            HStack {
-                Spacer()
-                TextField(
-                    "Neighborhood",
-                    text: $neighborhood
-                )
-                .font(.title2)
-                .foregroundStyle(Color.black)
-                .bold()
+            // TODO: get user current location
+            // TODO: set initialPosition to user location
+            // TODO: add putting a pin on map feature
+             
+            Map(initialPosition: startPosition) {
+                
             }
+            .frame(width: 350, height: 350)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding()
             
         }
         .padding()

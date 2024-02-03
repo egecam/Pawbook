@@ -62,10 +62,14 @@ struct CatDetailsView: View {
             
             Map {
                 Marker(catViewModel.catName, systemImage: "cat.circle.fill", coordinate: catViewModel.catCoordinates)
+                MapCircle(center: .catCoordinate, radius: CLLocationDistance(50))
+                    .foregroundStyle(.orange.opacity(0.5))
+                    .mapOverlayLevel(level: .aboveLabels)
             }
             .frame(width: 350, height: 350)
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .padding()
+            .tint(.orange)
         }
     }
 }
