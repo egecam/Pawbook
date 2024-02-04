@@ -57,7 +57,7 @@ struct CatDetailsView: View {
             
             Text("\(catViewModel.catName) is \(catViewModel.catAge.formatted()) years old.")
                 .font(.headline)
-            Text("He likes to play with animating objects, run after his human and some other silly things every cat loves to do!")
+            Text("He is a literal orange. He loves to spy on his human and do some other silly things that every cat does on a daily basis.")
                 .padding()
             
             Map {
