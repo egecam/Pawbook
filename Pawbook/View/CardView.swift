@@ -44,7 +44,7 @@ struct CardView: View {
                             Text("\(catViewModel.catBreed)")
                                 .font(.title)
                         }
-                        Text("\(catViewModel.catAge)")
+                        Text("\(catViewModel.catAge.formatted()) years")
                             .foregroundStyle(Color.secondary)
                             .bold()
                             .font(.title3)
