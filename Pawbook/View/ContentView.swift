@@ -27,22 +27,8 @@ struct ContentView: View {
             Spacer()
             
             NavigationLink(destination: RegisterNewCatView(), label: {
-                ZStack {
-                    Color.orange
-                        .opacity(0.25)
-                        .clipShape(RoundedRectangle(cornerRadius: 12))
-                        .frame(width: 250, height: 60)
-                    HStack {
-                        Image(systemName: "plus.square.dashed")
-                            .foregroundStyle(.orange)
-                            .font(.title3)
-                        Text("Register a paw")
-                            .font(.title3)
-                            .foregroundStyle(Color.orange)
-                    }
-                }
+                ButtonWithImageView(title: "Register a paw", image: "plus.square.dashed", color: .orange)
             })
-            .navigationBarBackButtonHidden(true)
             
             Spacer()
             

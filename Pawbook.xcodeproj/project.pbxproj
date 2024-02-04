@@ -10,6 +10,7 @@
 		D48215402B6D246600D00005 /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482153F2B6D246600D00005 /* CatViewModel.swift */; };
 		D48215422B6D29B200D00005 /* CatDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48215412B6D29B200D00005 /* CatDetailsView.swift */; };
 		D48215462B6D7D4500D00005 /* RegisterNewCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48215452B6D7D4500D00005 /* RegisterNewCatView.swift */; };
+		D4903B992B6FC02C00E90944 /* ButtonWithImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4903B982B6FC02C00E90944 /* ButtonWithImageView.swift */; };
 		D4B6173D2B6D1445009860F8 /* PawbookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6173C2B6D1445009860F8 /* PawbookApp.swift */; };
 		D4B6173F2B6D1445009860F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6173E2B6D1445009860F8 /* ContentView.swift */; };
 		D4B617412B6D1446009860F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B617402B6D1446009860F8 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		D482153F2B6D246600D00005 /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
 		D48215412B6D29B200D00005 /* CatDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailsView.swift; sourceTree = "<group>"; };
 		D48215452B6D7D4500D00005 /* RegisterNewCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewCatView.swift; sourceTree = "<group>"; };
+		D4903B982B6FC02C00E90944 /* ButtonWithImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImageView.swift; sourceTree = "<group>"; };
 		D4B617392B6D1445009860F8 /* Pawbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B6173C2B6D1445009860F8 /* PawbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawbookApp.swift; sourceTree = "<group>"; };
 		D4B6173E2B6D1445009860F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,7 +68,6 @@
 				D4B6174B2B6D1475009860F8 /* View */,
 				D4B6174D2B6D1487009860F8 /* ViewModel */,
 				D4B6173C2B6D1445009860F8 /* PawbookApp.swift */,
-				D4B6173E2B6D1445009860F8 /* ContentView.swift */,
 				D4B617402B6D1446009860F8 /* Assets.xcassets */,
 				D4B617422B6D1446009860F8 /* Pawbook.entitlements */,
 				D4B617432B6D1446009860F8 /* Preview Content */,
@@ -85,9 +86,11 @@
 		D4B6174B2B6D1475009860F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D4B6173E2B6D1445009860F8 /* ContentView.swift */,
 				D4B617502B6D1668009860F8 /* CardView.swift */,
 				D48215412B6D29B200D00005 /* CatDetailsView.swift */,
 				D48215452B6D7D4500D00005 /* RegisterNewCatView.swift */,
+				D4903B982B6FC02C00E90944 /* ButtonWithImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				D4B6173F2B6D1445009860F8 /* ContentView.swift in Sources */,
 				D48215462B6D7D4500D00005 /* RegisterNewCatView.swift in Sources */,
+				D4903B992B6FC02C00E90944 /* ButtonWithImageView.swift in Sources */,
 				D4B6173D2B6D1445009860F8 /* PawbookApp.swift in Sources */,
 				D4B617512B6D1668009860F8 /* CardView.swift in Sources */,
 				D48215402B6D246600D00005 /* CatViewModel.swift in Sources */,
