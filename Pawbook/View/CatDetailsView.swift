@@ -13,6 +13,8 @@ extension CLLocationCoordinate2D {
 }
 
 struct CatDetailsView: View {
+    @StateObject private var mapViewModel = MapViewModel()
+    
     @ObservedObject var catViewModel: CatViewModel
     
     @State private var catCoordinates = MKCoordinateRegion(
@@ -66,10 +68,13 @@ struct CatDetailsView: View {
                     .foregroundStyle(.orange.opacity(0.5))
                     .mapOverlayLevel(level: .aboveLabels)
             }
-            .frame(width: 350, height: 350)
+            .frame(width: 360, height: 360)
             .clipShape(RoundedRectangle(cornerRadius: 12))
             .padding()
             .tint(.orange)
+        }
+        .task {
+            mapViewModel.checkIfLocationServicesIsEnabled()
         }
     }
 }
