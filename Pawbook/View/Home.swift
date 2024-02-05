@@ -13,10 +13,12 @@ struct Home: View {
     @StateObject var catViewModel2 = CatViewModel(catModel: CatModel(name: "Zeus", breed: "Tabby", age: 13.0, neighborhood: "Altayçeşme", coordinate: CLLocationCoordinate2D(latitude: 40.936933012654116, longitude: 29.131188164737058), thumbnailImage: "https://cdn2.thecatapi.com/images/RqIGMF79u.jpg"))
     @StateObject var catViewModel3 = CatViewModel(catModel: CatModel(name: "Simba", breed: "Siamese", age: 4.0, neighborhood: "Moda", coordinate: CLLocationCoordinate2D(latitude: 40.98185491474414, longitude: 29.023143536835203), thumbnailImage: "https://cdn2.thecatapi.com/images/MTU0NzEwOA.jpg"))
     
+    @StateObject private var mapViewModel = MapViewModel()
+    
     var body: some View {
         NavigationStack {
             HStack {
-                Image(systemName: "cat.fill")
+                Image(systemName: "pawprint.fill")
                 Text("Pawbook")
                 Spacer()
             }
@@ -28,6 +30,9 @@ struct Home: View {
             
             NavigationLink(destination: RegisterNewCatView(), label: {
                 ButtonWithImageView(title: "Register a paw", image: "plus.square.dashed", color: .orange)
+                    .onAppear {
+                        mapViewModel.checkIfLocationServicesIsEnabled()
+                    }
             })
             
             Spacer()
@@ -59,6 +64,7 @@ struct Home: View {
             }
         }
         .tint(.black)
+        
     }
 }
 
