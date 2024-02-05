@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D458C6752B717A6500FF0435 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458C6742B717A6500FF0435 /* MapViewModel.swift */; };
+		D458C6772B71A0EF00FF0435 /* Lozalizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = D458C6762B71A0EF00FF0435 /* Lozalizable.xcstrings */; };
 		D48215402B6D246600D00005 /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482153F2B6D246600D00005 /* CatViewModel.swift */; };
 		D48215422B6D29B200D00005 /* CatDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48215412B6D29B200D00005 /* CatDetailsView.swift */; };
 		D48215462B6D7D4500D00005 /* RegisterNewCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48215452B6D7D4500D00005 /* RegisterNewCatView.swift */; };
 		D4903B992B6FC02C00E90944 /* ButtonWithImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4903B982B6FC02C00E90944 /* ButtonWithImageView.swift */; };
 		D4B6173D2B6D1445009860F8 /* PawbookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6173C2B6D1445009860F8 /* PawbookApp.swift */; };
-		D4B6173F2B6D1445009860F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6173E2B6D1445009860F8 /* ContentView.swift */; };
+		D4B6173F2B6D1445009860F8 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6173E2B6D1445009860F8 /* Home.swift */; };
 		D4B617412B6D1446009860F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B617402B6D1446009860F8 /* Assets.xcassets */; };
 		D4B617452B6D1446009860F8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4B617442B6D1446009860F8 /* Preview Assets.xcassets */; };
 		D4B6174F2B6D15AF009860F8 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B6174E2B6D15AF009860F8 /* Cat.swift */; };
@@ -20,13 +22,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D458C6742B717A6500FF0435 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		D458C6762B71A0EF00FF0435 /* Lozalizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Lozalizable.xcstrings; sourceTree = "<group>"; };
 		D482153F2B6D246600D00005 /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
 		D48215412B6D29B200D00005 /* CatDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailsView.swift; sourceTree = "<group>"; };
 		D48215452B6D7D4500D00005 /* RegisterNewCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewCatView.swift; sourceTree = "<group>"; };
 		D4903B982B6FC02C00E90944 /* ButtonWithImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithImageView.swift; sourceTree = "<group>"; };
+		D4903B9D2B6FDB6F00E90944 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D4B617392B6D1445009860F8 /* Pawbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pawbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4B6173C2B6D1445009860F8 /* PawbookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawbookApp.swift; sourceTree = "<group>"; };
-		D4B6173E2B6D1445009860F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D4B6173E2B6D1445009860F8 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D4B617402B6D1446009860F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4B617422B6D1446009860F8 /* Pawbook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pawbook.entitlements; sourceTree = "<group>"; };
 		D4B617442B6D1446009860F8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -48,6 +53,7 @@
 		D4B617302B6D1445009860F8 = {
 			isa = PBXGroup;
 			children = (
+				D458C6762B71A0EF00FF0435 /* Lozalizable.xcstrings */,
 				D4B6173B2B6D1445009860F8 /* Pawbook */,
 				D4B6173A2B6D1445009860F8 /* Products */,
 			);
@@ -71,6 +77,7 @@
 				D4B617402B6D1446009860F8 /* Assets.xcassets */,
 				D4B617422B6D1446009860F8 /* Pawbook.entitlements */,
 				D4B617432B6D1446009860F8 /* Preview Content */,
+				D4903B9D2B6FDB6F00E90944 /* README.md */,
 			);
 			path = Pawbook;
 			sourceTree = "<group>";
@@ -86,7 +93,7 @@
 		D4B6174B2B6D1475009860F8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D4B6173E2B6D1445009860F8 /* ContentView.swift */,
+				D4B6173E2B6D1445009860F8 /* Home.swift */,
 				D4B617502B6D1668009860F8 /* CardView.swift */,
 				D48215412B6D29B200D00005 /* CatDetailsView.swift */,
 				D48215452B6D7D4500D00005 /* RegisterNewCatView.swift */,
@@ -107,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				D482153F2B6D246600D00005 /* CatViewModel.swift */,
+				D458C6742B717A6500FF0435 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = D4B617302B6D1445009860F8;
 			productRefGroup = D4B6173A2B6D1445009860F8 /* Products */;
@@ -169,6 +178,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D458C6772B71A0EF00FF0435 /* Lozalizable.xcstrings in Resources */,
 				D4B617452B6D1446009860F8 /* Preview Assets.xcassets in Resources */,
 				D4B617412B6D1446009860F8 /* Assets.xcassets in Resources */,
 			);
@@ -181,7 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4B6173F2B6D1445009860F8 /* ContentView.swift in Sources */,
+				D4B6173F2B6D1445009860F8 /* Home.swift in Sources */,
 				D48215462B6D7D4500D00005 /* RegisterNewCatView.swift in Sources */,
 				D4903B992B6FC02C00E90944 /* ButtonWithImageView.swift in Sources */,
 				D4B6173D2B6D1445009860F8 /* PawbookApp.swift in Sources */,
@@ -189,6 +199,7 @@
 				D48215402B6D246600D00005 /* CatViewModel.swift in Sources */,
 				D48215422B6D29B200D00005 /* CatDetailsView.swift in Sources */,
 				D4B6174F2B6D15AF009860F8 /* Cat.swift in Sources */,
+				D458C6752B717A6500FF0435 /* MapViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +333,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "$(LOCATION_PERMISSION_DESC)";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -360,6 +372,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "$(LOCATION_PERMISSION_DESC)";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
