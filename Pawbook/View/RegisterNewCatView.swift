@@ -9,17 +9,12 @@ import SwiftUI
 import MapKit
 
 struct RegisterNewCatView: View {
+    @StateObject private var mapViewModel = MapViewModel()
+    
     @State private var name: String = ""
     @State private var breed: String = ""
     @State private var age: String = ""
     @State private var desc: String = ""
-    
-    let startPosition = MapCameraPosition.region(MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 56, longitude: -3),
-        span: MKCoordinateSpan(latitudeDelta: -10, longitudeDelta: 10)
-    ))
-    
-    @StateObject var catViewModel1 = CatViewModel(catModel: CatModel(name: "Arwen", breed: "Tabby", age: 1.0, neighborhood: "Cihangir", coordinate: CLLocationCoordinate2D(latitude: 41.03252586801304, longitude: 28.984382222365696), thumbnailImage: "https://cdn2.thecatapi.com/images/dj5.jpg"))
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -91,7 +86,6 @@ struct RegisterNewCatView: View {
             }
             .padding()
             
-            // TODO: get user current location
             // TODO: set initialPosition to user location
             // TODO: add putting a pin on map feature
             
@@ -102,16 +96,20 @@ struct RegisterNewCatView: View {
                         .bold()
                     Label("Where do they hang around approximately?", systemImage: "mappin.and.ellipse")
                         .font(.caption)
-                        
+                    
                 }
                 
-                Map()
-                    .mapControls({
+                Map(position: $mapViewModel.cameraPosition) {
+                    
+                }
+                    .mapControls{
                         MapUserLocationButton()
-                    })
+                    }
                     .frame(width: 360, height: 360)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                     .safeAreaPadding()
+                    .tint(.orange)
+                
             }
             
             HStack {
@@ -149,11 +147,10 @@ struct RegisterNewCatView: View {
             }
             
         }
-        
-        
     }
 }
 
 #Preview {
     RegisterNewCatView()
 }
+
