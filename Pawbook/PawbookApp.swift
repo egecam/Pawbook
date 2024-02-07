@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct PawbookApp: App {
@@ -13,5 +14,6 @@ struct PawbookApp: App {
         WindowGroup {
             Home()
         }
+        .modelContainer(for: Cat.self)
     }
 }
