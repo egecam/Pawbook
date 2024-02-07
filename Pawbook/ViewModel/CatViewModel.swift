@@ -9,9 +9,9 @@ import Foundation
 import CoreLocation
 
 class CatViewModel: ObservableObject {
-    @Published var catModel: CatModel
+    @Published var catModel: Cat
     
-    init(catModel: CatModel) {
+    init(catModel: Cat) {
         self.catModel = catModel
     }
     
@@ -31,8 +31,8 @@ class CatViewModel: ObservableObject {
         return catModel.neighborhood
     }
     
-    var catCoordinates: CLLocationCoordinate2D {
-        return catModel.coordinate ?? .init(latitude: 1, longitude: 1)
+    var catCoordinates: Coordinate2D {
+        return catModel.location
     }
     
     var thumbnailImage: String {
