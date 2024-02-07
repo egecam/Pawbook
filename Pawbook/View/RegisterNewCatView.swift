@@ -7,14 +7,17 @@
 
 import SwiftUI
 import MapKit
+import SwiftData
 
 struct RegisterNewCatView: View {
+    @Environment(\.modelContext) private var modelContext
+    
     @StateObject private var mapViewModel = MapViewModel()
     
-    @State private var name: String = ""
-    @State private var breed: String = ""
-    @State private var age: String = ""
-    @State private var desc: String = ""
+    @State var name: String = ""
+    @State var breed: String = ""
+    @State var age: Double = 0
+    @State var desc: String = ""
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -61,7 +64,8 @@ struct RegisterNewCatView: View {
                 Spacer()
                 TextField(
                     "Age",
-                    text: $age
+                    value: $age,
+                    formatter: amountFormatter
                 )
                 .multilineTextAlignment(.center)
                 .foregroundStyle(Color.secondary)
@@ -86,7 +90,6 @@ struct RegisterNewCatView: View {
             }
             .padding()
             
-            // TODO: set initialPosition to user location
             // TODO: add putting a pin on map feature
             
             VStack {
@@ -102,13 +105,13 @@ struct RegisterNewCatView: View {
                 Map(position: $mapViewModel.cameraPosition) {
                     
                 }
-                    .mapControls{
-                        MapUserLocationButton()
-                    }
-                    .frame(width: 360, height: 360)
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .safeAreaPadding()
-                    .tint(.orange)
+                .mapControls{
+                    MapUserLocationButton()
+                }
+                .frame(width: 360, height: 360)
+                .clipShape(RoundedRectangle(cornerRadius: 12))
+                .safeAreaPadding()
+                .tint(.orange)
                 
             }
             
@@ -130,6 +133,8 @@ struct RegisterNewCatView: View {
                 
                 Button {
                     // TODO: action to save
+                    let newCat = Cat(name: name, breed: breed, age: age, neighborhood: "", location: Coordinate2D(latitude: 42, longitude: 29), thumbnailImage: "")
+                    modelContext.insert(newCat)
                 } label: {
                     ZStack {
                         Color.green
@@ -147,7 +152,14 @@ struct RegisterNewCatView: View {
             }
             
         }
+        
+        
     }
+    let amountFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.zeroSymbol = ""
+        return formatter
+    }()
 }
 
 #Preview {
