@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CardView: View {
-    @ObservedObject var catViewModel: CatViewModel
+    @Bindable var cat: Cat
     
     var body: some View {
         ZStack {
@@ -19,17 +20,17 @@ struct CardView: View {
                 HStack {
                     Spacer()
                     HStack {
-                        Image(systemName: "mappin.and.ellipse")
-                        Text("\(catViewModel.catNeighborhood)")
+                        Label($cat.neighborhood.wrappedValue, systemImage: "mappin.and.ellipse")
                             .foregroundStyle(Color.secondary)
                             .bold()
                             .font(.title3)
+                        
                     }
                     .padding()
                 }
                 
                 Spacer()
-                AsyncImage(url: URL(string: catViewModel.thumbnailImage)) { image in
+                AsyncImage(url: URL(string: "")) { image in
                     image.image?.resizable()
                 }
                 .frame(width: 270, height: 270)
@@ -38,13 +39,13 @@ struct CardView: View {
                     
                     VStack {
                         HStack {
-                            Text("\(catViewModel.catName),")
+                            Text("\($cat.name.wrappedValue),")
                                 .bold()
                                 .font(.largeTitle)
-                            Text("\(catViewModel.catBreed)")
+                            Text("\($cat.breed.wrappedValue)")
                                 .font(.title)
                         }
-                        Text("\(catViewModel.catAge.formatted()) years")
+                        Text("\($cat.age.wrappedValue.formatted()) years")
                             .foregroundStyle(Color.secondary)
                             .bold()
                             .font(.title3)
@@ -61,5 +62,5 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(catViewModel: CatViewModel(catModel: CatModel(name: "Arwen", breed: "Tabby", age: 2.0, neighborhood: "Moda", thumbnailImage: "https://cdn2.thecatapi.com/images/dj5.jpg")))
+    CardView(cat: Cat(name: "Arwen", breed: "Tabby", age: 2.0, neighborhood: "Moda", location: Coordinate2D(latitude: 41.032, longitude: 28.984), thumbnailImage: "https://cdn2.thecatapi.com/images/dj5.jpg"))
 }

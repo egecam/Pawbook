@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import SwiftData
 
 extension CLLocationCoordinate2D {
     static let catCoordinate = CLLocationCoordinate2D(latitude: 41.03252586801304, longitude: 28.984382222365696)
@@ -15,7 +16,7 @@ extension CLLocationCoordinate2D {
 struct CatDetailsView: View {
     @StateObject private var mapViewModel = MapViewModel()
     
-    @ObservedObject var catViewModel: CatViewModel
+    @Bindable var cat: Cat
     
     @State private var catCoordinates = MKCoordinateRegion(
         center: CLLocationCoordinate2D(latitude: 41.03252586801304, longitude: 28.984382222365696),
@@ -28,7 +29,7 @@ struct CatDetailsView: View {
             VStack {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
-                        AsyncImage(url: URL(string: catViewModel.thumbnailImage)) { image in
+                        AsyncImage(url: URL(string: "https://cdn2.thecatapi.com/images/GAmy2bg8G.jpg")) { image in
                             image.image?.resizable()
                         }
                         .frame(width: 360, height: 360)
@@ -46,24 +47,24 @@ struct CatDetailsView: View {
                 }
                 
                 HStack {
-                    Text("\(catViewModel.catName)")
+                    Text($cat.name.wrappedValue)
                         .font(.largeTitle)
                         .bold()
                     Text("from")
                         .font(.largeTitle)
-                    Text("\(catViewModel.catNeighborhood)")
+                    Text($cat.neighborhood.wrappedValue)
                         .font(.largeTitle)
                         .bold()
                 }
             }
             
-            Text("\(catViewModel.catName) is \(catViewModel.catAge.formatted()) years old.")
+            Text("\($cat.name.wrappedValue) is \($cat.age.wrappedValue.formatted()) years old.")
                 .font(.headline)
             Text("He is a literal orange. He loves to spy on his human and do some other silly things that every cat does on a daily basis.")
                 .padding()
             
             Map {
-                Marker(catViewModel.catName, systemImage: "cat.circle.fill", coordinate: catViewModel.catCoordinates)
+                Marker("\($cat.name.wrappedValue)", systemImage: "cat.circle.fill", coordinate: cat.location.location)
                 MapCircle(center: .catCoordinate, radius: CLLocationDistance(50))
                     .foregroundStyle(.orange.opacity(0.5))
                     .mapOverlayLevel(level: .aboveLabels)
@@ -80,5 +81,5 @@ struct CatDetailsView: View {
 }
 
 #Preview {
-    CatDetailsView(catViewModel: CatViewModel(catModel: CatModel(name: "Arwen", breed: "Tabby", age: 2.5, neighborhood: "Cihangir", coordinate: CLLocationCoordinate2D(latitude: 41.03252586801304, longitude: 28.984382222365696), thumbnailImage: "https://cdn2.thecatapi.com/images/dj5.jpg")))
+    CatDetailsView(cat: Cat(name: "Zeus", breed: "Tabby", age: 12, neighborhood: "Altayçeşme", location: Coordinate2D(latitude: 41, longitude: 28), thumbnailImage: ""))
 }
