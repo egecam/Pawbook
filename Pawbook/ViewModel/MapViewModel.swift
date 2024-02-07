@@ -21,19 +21,22 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
     @Published var userLocation = CLLocationCoordinate2D(latitude: 41, longitude: 28.97)
     
     @Published var cameraPosition: MapCameraPosition = .region(MKCoordinateRegion.init(center: MapDetails.startingLocation,
-                                                                                       latitudinalMeters: 1000,
-                                                                                       longitudinalMeters: 1000))
+                                                                                       latitudinalMeters: 10000,
+                                                                                       longitudinalMeters: 10000))
     
     var locationManager: CLLocationManager?
     
     func checkIfLocationServicesIsEnabled() {
-        if CLLocationManager.locationServicesEnabled() {
-            self.locationManager = CLLocationManager()
-            self.locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            self.locationManager!.delegate = self
-        } else {
-            print("Show an alert letting them know this is off!")
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                self.locationManager = CLLocationManager()
+                self.locationManager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                self.locationManager!.delegate = self
+            } else {
+                print("Show an alert letting them know this is off!")
+            }
         }
+        
         
     }
     
@@ -54,7 +57,7 @@ final class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate 
             userLocation = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
             region = MKCoordinateRegion(center: coordinate,
                                         span: MapDetails.defaultSpan)
-            cameraPosition = MapCameraPosition.region(MKCoordinateRegion(center: userLocation, 
+            cameraPosition = MapCameraPosition.region(MKCoordinateRegion(center: userLocation,
                                                                          latitudinalMeters: 1000,
                                                                          longitudinalMeters: 1000))
             
