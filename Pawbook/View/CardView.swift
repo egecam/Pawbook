@@ -45,7 +45,7 @@ struct CardView: View {
                             Text("\($cat.breed.wrappedValue)")
                                 .font(.title)
                         }
-                        Text("\($cat.age.wrappedValue.formatted()) years")
+                        Text("\($cat.age.wrappedValue.formatted()) YEARS_TEXT_CAT_AGE")
                             .foregroundStyle(Color.secondary)
                             .bold()
                             .font(.title3)

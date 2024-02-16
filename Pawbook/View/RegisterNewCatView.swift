@@ -30,7 +30,7 @@ struct RegisterNewCatView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 12))
                         .opacity(0.25)
                         .frame(width: 360, height: 360)
-                    Label("Add Images", systemImage: "plus.square")
+                    Label("ADD_IMG_BUTTON", systemImage: "plus.square")
                         .labelStyle(.titleAndIcon)
                         .foregroundStyle(.secondary)
                 }
@@ -38,14 +38,14 @@ struct RegisterNewCatView: View {
             .safeAreaPadding()
             
             VStack {
-                Text("Basic Information")
+                Text("BASIC_INFO_TITLE")
                     .bold()
                     .font(.title)
-                Label("What are their name, breed and age?", systemImage: "person.text.rectangle.fill")
+                Label("BASIC_INFO_DESC", systemImage: "person.text.rectangle.fill")
                     .font(.caption)
                 
                 TextField(
-                    "Name",
+                    "NAME_INPUT",
                     text: $name
                 )
                 .multilineTextAlignment(.center)
@@ -55,7 +55,7 @@ struct RegisterNewCatView: View {
                 
                 Spacer()
                 TextField(
-                    "Breed",
+                    "BREED_INPUT",
                     text: $breed
                 )
                 .multilineTextAlignment(.center)
@@ -63,7 +63,7 @@ struct RegisterNewCatView: View {
                 
                 Spacer()
                 TextField(
-                    "Age",
+                    "AGE_INPUT",
                     value: $age,
                     formatter: amountFormatter
                 )
@@ -75,13 +75,13 @@ struct RegisterNewCatView: View {
             .padding()
             
             VStack {
-                Text("Tell us a bit about the cat!")
+                Text("CAT_BIO_TITLE")
                     .font(.title2)
                     .bold()
-                Label("What do they like? How to they act?", systemImage: "book")
+                Label("CAT_BIO_DESC", systemImage: "book")
                     .font(.caption)
                 TextField(
-                    "A silly orange cat...",
+                    "CAT_BIO_PH",
                     text: $desc
                 )
                 .multilineTextAlignment(.center)
@@ -94,10 +94,10 @@ struct RegisterNewCatView: View {
             
             VStack {
                 VStack {
-                    Text("Neighborhood")
+                    Text("NEIGHBORHOOD_TITLE")
                         .font(.title2)
                         .bold()
-                    Label("Where do they hang around approximately?", systemImage: "mappin.and.ellipse")
+                    Label("NEIGHBORHOOD_DESC", systemImage: "mappin.and.ellipse")
                         .font(.caption)
                     
                 }
@@ -123,7 +123,7 @@ struct RegisterNewCatView: View {
                         Color.red
                             .clipShape(RoundedRectangle(cornerRadius: 12))
                             .opacity(0.2)
-                        Text("Cancel")
+                        Text("CANCEL_BUTTON")
                             .foregroundStyle(.red.secondary)
                             .font(.title3)
                             .padding()
@@ -132,7 +132,6 @@ struct RegisterNewCatView: View {
                 .padding()
                 
                 Button {
-                    // TODO: action to save
                     let newCat = Cat(name: name, breed: breed, age: age, neighborhood: "", location: Coordinate2D(latitude: 42, longitude: 29), thumbnailImage: "")
                     modelContext.insert(newCat)
                 } label: {
@@ -140,7 +139,7 @@ struct RegisterNewCatView: View {
                         Color.green
                             .clipShape(RoundedRectangle(cornerRadius: 12))
                             .opacity(0.35)
-                        Text("Save")
+                        Text("SAVE_BUTTON")
                             .foregroundStyle(.green)
                             .bold()
                             .font(.title3)

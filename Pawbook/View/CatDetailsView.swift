@@ -18,13 +18,7 @@ struct CatDetailsView: View {
     
     @Bindable var cat: Cat
     
-    @State private var catCoordinates = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(latitude: 41.03252586801304, longitude: 28.984382222365696),
-        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-    )
-    
     var body: some View {
-        
         ScrollView(.vertical, showsIndicators: false) {
             VStack {
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -50,15 +44,16 @@ struct CatDetailsView: View {
                     Text($cat.name.wrappedValue)
                         .font(.largeTitle)
                         .bold()
-                    Text("from")
+                    Text("FROM_TEXT_CAT_NEIGHBORHOOD \($cat.neighborhood.wrappedValue) TR_FROM_PREFIX")
                         .font(.largeTitle)
-                    Text($cat.neighborhood.wrappedValue)
-                        .font(.largeTitle)
-                        .bold()
+                    /* Text($cat.neighborhood.wrappedValue)
+                     .font(.largeTitle)
+                     .bold()
+                     */
                 }
             }
             
-            Text("\($cat.name.wrappedValue) is \($cat.age.wrappedValue.formatted()) years old.")
+            Text("\($cat.name.wrappedValue) IS_BEFORE_CAT_AGE \($cat.age.wrappedValue.formatted()) YEARS_OLD_TEXT.")
                 .font(.headline)
             Text("He is a literal orange. He loves to spy on his human and do some other silly things that every cat does on a daily basis.")
                 .padding()
