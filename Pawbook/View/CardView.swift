@@ -62,5 +62,13 @@ struct CardView: View {
 }
 
 #Preview {
-    CardView(cat: Cat(name: "Arwen", breed: "Tabby", age: 2.0, neighborhood: "Moda", location: Coordinate2D(latitude: 41.032, longitude: 28.984), thumbnailImage: "https://cdn2.thecatapi.com/images/dj5.jpg"))
+    CardView(cat: Cat(name: "Arwen",
+                      breed: "Tabby",
+                      age: 2.0,
+                      neighborhood: "Moda",
+                      location: Coordinate2D(latitude: 41.032, longitude: 28.984),
+                      thumbnailImage: "https://cdn2.thecatapi.com/images/dj5.jpg",
+                      bio: "He is a literal orange. He likes to spy invisible objects.", registeredBy: User(username: "ege", email: "ege", password: "123", bio: "i love cats", profilePicture: "123")
+                     )
+    )
 }
