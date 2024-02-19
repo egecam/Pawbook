@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D448F9652B7FF1F000EE5B97 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448F9642B7FF1F000EE5B97 /* User.swift */; };
 		D458C6752B717A6500FF0435 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D458C6742B717A6500FF0435 /* MapViewModel.swift */; };
 		D48215422B6D29B200D00005 /* CatDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48215412B6D29B200D00005 /* CatDetailsView.swift */; };
 		D48215462B6D7D4500D00005 /* RegisterNewCatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48215452B6D7D4500D00005 /* RegisterNewCatView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D448F9642B7FF1F000EE5B97 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D458C6742B717A6500FF0435 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		D48215412B6D29B200D00005 /* CatDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailsView.swift; sourceTree = "<group>"; };
 		D48215452B6D7D4500D00005 /* RegisterNewCatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterNewCatView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				D4B6174E2B6D15AF009860F8 /* Cat.swift */,
+				D448F9642B7FF1F000EE5B97 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				D4903B992B6FC02C00E90944 /* ButtonWithImageView.swift in Sources */,
 				D4B6173D2B6D1445009860F8 /* PawbookApp.swift in Sources */,
 				D4B617512B6D1668009860F8 /* CardView.swift in Sources */,
+				D448F9652B7FF1F000EE5B97 /* User.swift in Sources */,
 				D48215422B6D29B200D00005 /* CatDetailsView.swift in Sources */,
 				D4B6174F2B6D15AF009860F8 /* Cat.swift in Sources */,
 				D458C6752B717A6500FF0435 /* MapViewModel.swift in Sources */,
