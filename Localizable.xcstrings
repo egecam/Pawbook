@@ -180,6 +180,7 @@
       }
     },
     "CANCEL_BUTTON" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -254,6 +255,7 @@
       }
     },
     "He is a literal orange. He loves to spy on his human and do some other silly things that every cat does on a daily basis." : {
+      "extractionState" : "stale",
       "localizations" : {
         "tr" : {
           "stringUnit" : {
