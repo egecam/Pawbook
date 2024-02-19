@@ -12,7 +12,7 @@ import SwiftData
 struct PawbookApp: App {
     var body: some Scene {
         WindowGroup {
-            Home()
+            Home(isLoggedIn: true)
         }
         .modelContainer(for: Cat.self)
     }
