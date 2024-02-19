@@ -28,14 +28,20 @@ final class Cat {
     var neighborhood: String
     var location: Coordinate2D
     var thumbnailImage: String
+    var bio: String
+    var registeredBy: User
+    var verifiedBy: [User]?
     
-    init(name: String, breed: String, age: Double, neighborhood: String, location: Coordinate2D, thumbnailImage: String) {
+    init(name: String, breed: String, age: Double, neighborhood: String, location: Coordinate2D, thumbnailImage: String, bio: String, registeredBy: User, verifiedBy: [User]? = nil) {
         self.name = name
         self.breed = breed
         self.age = age
         self.neighborhood = neighborhood
         self.location = location
         self.thumbnailImage = thumbnailImage
+        self.bio = bio
+        self.registeredBy = registeredBy
+        self.verifiedBy = verifiedBy
     }
 }
 
