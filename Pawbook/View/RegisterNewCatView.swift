@@ -116,41 +116,24 @@ struct RegisterNewCatView: View {
                 
             }
             
-            HStack {
-                Button {
-                    // TODO: action to cancel
-                } label: {
-                    ZStack {
-                        Color.red
-                            .clipShape(RoundedRectangle(cornerRadius: 12))
-                            .opacity(0.2)
-                        Text("CANCEL_BUTTON")
-                            .foregroundStyle(.red.secondary)
-                            .font(.title3)
-                            .padding()
-                    }
+            Button {
+                // TODO: add registeredBy User
+               // let newCat = Cat(name: name, breed: breed, age: age, neighborhood: "", location: Coordinate2D(latitude: 42, longitude: 29), thumbnailImage: "", bio: bio)
+                // modelContext.insert(newCat)
+                dismiss()
+            } label: {
+                ZStack {
+                    Color.green
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .opacity(0.35)
+                    Text("SAVE_BUTTON")
+                        .foregroundStyle(.green)
+                        .bold()
+                        .font(.title3)
+                        .padding()
                 }
-                .padding()
-                
-                Button {
-                    let newCat = Cat(name: name, breed: breed, age: age, neighborhood: "", location: Coordinate2D(latitude: 42, longitude: 29), thumbnailImage: "")
-                    modelContext.insert(newCat)
-                } label: {
-                    ZStack {
-                        Color.green
-                            .clipShape(RoundedRectangle(cornerRadius: 12))
-                            .opacity(0.35)
-                        Text("SAVE_BUTTON")
-                            .foregroundStyle(.green)
-                            .bold()
-                            .font(.title3)
-                            .padding()
-                    }
-                }
-                .padding()
-                
             }
-            
+            .padding()
         }
     }
     
