@@ -11,13 +11,14 @@ import SwiftData
 
 struct RegisterNewCatView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     
     @StateObject private var mapViewModel = MapViewModel()
     
     @State var name: String = ""
     @State var breed: String = ""
     @State var age: Double = 0
-    @State var desc: String = ""
+    @State var bio: String = ""
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -82,7 +83,7 @@ struct RegisterNewCatView: View {
                     .font(.caption)
                 TextField(
                     "CAT_BIO_PH",
-                    text: $desc
+                    text: $bio
                 )
                 .multilineTextAlignment(.center)
                 // TODO: auto multiline
@@ -151,9 +152,8 @@ struct RegisterNewCatView: View {
             }
             
         }
-        
-        
     }
+    
     let amountFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
         formatter.zeroSymbol = ""
@@ -161,7 +161,8 @@ struct RegisterNewCatView: View {
     }()
 }
 
+
+
 #Preview {
     RegisterNewCatView()
 }
-
