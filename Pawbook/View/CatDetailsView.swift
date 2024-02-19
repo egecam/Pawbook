@@ -55,7 +55,7 @@ struct CatDetailsView: View {
             
             Text("\($cat.name.wrappedValue) IS_BEFORE_CAT_AGE \($cat.age.wrappedValue.formatted()) YEARS_OLD_TEXT.")
                 .font(.headline)
-            Text("He is a literal orange. He loves to spy on his human and do some other silly things that every cat does on a daily basis.")
+            Text("\($cat.bio.wrappedValue)")
                 .padding()
             
             Map {
@@ -76,5 +76,10 @@ struct CatDetailsView: View {
 }
 
 #Preview {
-    CatDetailsView(cat: Cat(name: "Zeus", breed: "Tabby", age: 12, neighborhood: "Altayçeşme", location: Coordinate2D(latitude: 41, longitude: 28), thumbnailImage: ""))
+    CatDetailsView(cat: Cat(name: "Zeus", 
+                            breed: "Tabby",
+                            age: 12,
+                            neighborhood: "Altayçeşme",
+                            location: Coordinate2D(latitude: 41, longitude: 28), thumbnailImage: "", bio: "He is a literal orange. He likes to spy invisible objects.",
+                            registeredBy: User(username: "ege", email: "ege", password: "123", bio: "i love cats", profilePicture: "123")))
 }
